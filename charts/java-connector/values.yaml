@@ -1,0 +1,26 @@
+
+replicaCount: 1
+
+livenessProbe:
+  httpGet:
+    path: /
+readinessProbe:
+  httpGet:
+    path: /
+
+env: {}
+# - name: TEST
+#   value: my_val
+
+resources: {}
+  # requests:
+  #   cpu: 100m
+  #   memory: 250Mi
+  # limits:
+  #   cpu: 500m
+  #   memory: 1Gi
+
+service:
+  name: java-connector
+  externalPort: 8080
+  internalPort: 8080
