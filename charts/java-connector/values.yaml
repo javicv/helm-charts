@@ -1,5 +1,6 @@
-
 replicaCount: 1
+
+image: test:latest
 
 livenessProbe:
   httpGet:
