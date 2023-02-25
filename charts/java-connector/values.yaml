@@ -2,6 +2,9 @@ replicaCount: 1
 
 image: test:latest
 
+serviceAccount:
+serviceAccountName:
+
 livenessProbe:
   httpGet:
     path: /

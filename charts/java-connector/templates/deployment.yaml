@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "fullname" . }}-deploy
+  name: {{ include "fullname" . }}
   labels:
     chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
 spec:
@@ -14,6 +14,12 @@ spec:
       labels:
         app: {{ include "fullname" . }}
     spec:
+      {{- if serviceAccount  -}}
+      serviceAccount: {{ serviceAccount }}
+      {{- end -}}
+      {{- if serviceAccountName  -}}
+      serviceAccountName: {{ serviceAccountName }}
+      {{- end -}}
       containers:
       - name: {{ .Chart.Name }}
         image: "{{ .Values.image }}"
@@ -24,11 +30,11 @@ spec:
         - containerPort: {{ .Values.service.internalPort | int }}
         livenessProbe:
           httpGet:
-            path: {{ .Values.livenessProbe.httpGet.path | default / }}
+            path: {{ default / .Values.livenessProbe.httpGet.path }}
             port: {{ .Values.service.internalPort | int }}
         readinessProbe:
           httpGet:
-            path: {{ .Values.readinessProbe.httpGet.path | default / }}
+            path: {{ default / .Values.readinessProbe.httpGet.path }}
             port: {{ .Values.service.internalPort | int }}
         resources:
 {{ toYaml .Values.resources | indent 10 }}
