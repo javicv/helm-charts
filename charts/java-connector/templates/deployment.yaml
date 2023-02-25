@@ -30,11 +30,11 @@ spec:
         - containerPort: {{ .Values.service.internalPort | int }}
         livenessProbe:
           httpGet:
-            path: {{ default / .Values.livenessProbe.httpGet.path }}
+            path: {{ default "/" .Values.livenessProbe.httpGet.path }}
             port: {{ .Values.service.internalPort | int }}
         readinessProbe:
           httpGet:
-            path: {{ default / .Values.readinessProbe.httpGet.path }}
+            path: {{ default "/" .Values.readinessProbe.httpGet.path }}
             port: {{ .Values.service.internalPort | int }}
         resources:
 {{ toYaml .Values.resources | indent 10 }}

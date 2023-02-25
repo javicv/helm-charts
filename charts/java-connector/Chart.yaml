@@ -1,4 +1,4 @@
 apiVersion: v2
 name: java-connector
 description: Helm Chart for java applications
-version: 0.9.0
+version: 0.9.1
