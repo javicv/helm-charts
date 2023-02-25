@@ -14,11 +14,11 @@ spec:
       labels:
         app: {{ include "fullname" . }}
     spec:
-      {{- if serviceAccount  -}}
-      serviceAccount: {{ serviceAccount }}
+      {{- if .Values.serviceAccount  -}}
+      serviceAccount: {{ .Values.serviceAccount }}
       {{- end -}}
-      {{- if serviceAccountName  -}}
-      serviceAccountName: {{ serviceAccountName }}
+      {{- if .Values.serviceAccountName  -}}
+      serviceAccountName: {{ .Values.serviceAccountName }}
       {{- end -}}
       containers:
       - name: {{ .Chart.Name }}
