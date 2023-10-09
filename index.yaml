@@ -2,6 +2,14 @@ apiVersion: v1
 entries:
   java-connector:
   - apiVersion: v2
+    created: "2023-10-09T21:46:54.525285997Z"
+    description: Helm Chart for java applications
+    digest: 9657df67366641fc33b96ab6969502da1dfcb8dc9787543909cc77bc0d0e8bca
+    name: java-connector
+    urls:
+    - https://github.com/javicv/helm-charts/releases/download/java-connector-1.0.1/java-connector-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
     created: "2023-02-25T02:02:18.402747705Z"
     description: Helm Chart for java applications
     digest: f458104e0209506aa2691e1f71e72a64481ee8e3c14468b807e83c60ad6170eb
@@ -56,4 +64,4 @@ entries:
     urls:
     - https://github.com/javicv/helm-charts/releases/download/java-connector-0.0.1/java-connector-0.0.1.tgz
     version: 0.0.1
-generated: "2023-02-25T02:02:18.402851505Z"
+generated: "2023-10-09T21:46:54.525309398Z"
